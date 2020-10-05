@@ -1,30 +1,39 @@
-import React, { useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Header from "../Header";
 import UsernameInput from "../UsernameInput";
 import CleanedView from "../CleanedView";
+import ProfileView from "../ProfileView";
+
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "../../theme";
+import GlobalTheme from "../../globals";
+
 import "./styles.css";
 
 function App() {
   const [nickname, setNickname] = useState("");
-
-  const handleSubmit = (name) => {
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("filipegl/github-profile/darkmode"))
+  );
+  const handleSubmit = async (name) => {
     setNickname(name);
   };
 
-  // https://api.github.com/users/{nickname}
+  useEffect(() => {
+    localStorage.setItem("filipegl/github-profile/darkmode", darkMode);
+  }, [darkMode]);
+
   return (
-    <div className="App">
-      <Header />
-      <UsernameInput onSubmit={handleSubmit} />
-      {nickname ? (
-        // <ProfileView />
-        <div>
-          <p>TODO: Exibi perfil de {nickname}, caso exista</p>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Fragment>
+        <GlobalTheme />
+        <div className="App">
+          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+          <UsernameInput onSubmit={handleSubmit} />
+          {nickname ? <ProfileView nickname={nickname} /> : <CleanedView />}
         </div>
-      ) : (
-        <CleanedView />
-      )}
-    </div>
+      </Fragment>
+    </ThemeProvider>
   );
 }
 

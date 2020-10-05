@@ -1,12 +1,10 @@
 import React from "react";
 import VersionControlSVG from "../../images/undraw_version_control_9bpv.svg";
 import "./styles.css";
-const index = () => {
+const CleanedView = () => {
   return (
-    <div>
-      <img className="Version-control-SVG" src={VersionControlSVG} alt="logo" />
-    </div>
+    <img className="Version-control-SVG" src={VersionControlSVG} alt="logo" />
   );
 };
 
-export default index;
+export default CleanedView;

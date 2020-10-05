@@ -12,10 +12,19 @@ input[type=text], textarea {
     border: 1px solid #DDDDDD;
   }
    
-  input[type=text]:focus, textarea:focus {
-    box-shadow: 0 0 3px #6C63FF;
-    border-radius: 5px;
-    padding: 8px 0px 8px 12px;
-    margin: 5px 1px 3px 0px;
-    border: 1px solid #6C63FF;
-  }
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 3px #6C63FF;
+  border-radius: 5px;
+  padding: 8px 0px 8px 12px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #6C63FF;
+}
+
+input[type=submit] {
+  background-color: #6c63ff;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 12px 8px 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

@@ -1,21 +1,22 @@
 .App-header {
-    min-height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: calc(20px + 2vmin);
-    width: 100vw;
-  }
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(20px + 2vmin);
+  width: 100vw;
+}
 .Right-corner {
-    display: flex;
-    align-items: center;
-    margin-right: 10vh;
+  display: flex;
+  align-items: center;
+  margin-right: 10vh;
 }
 .App-title {
   margin-left: 10vh
 }
 .App-logo {
-    min-height: 30px;
+  margin-left: 20px;
+  width: 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

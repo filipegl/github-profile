@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+
 const UsernameInput = ({ onSubmit }) => {
   const [nickname, setNickname] = useState("");
 
@@ -21,7 +22,7 @@ const UsernameInput = ({ onSubmit }) => {
         placeholder="Digite o usuário do Github"
         color="#66FF66"
       />
-      {/* <input type="submit" value="Procurar" /> */}
+      <input type="submit" value="Procurar" />
     </form>
   );
 };
